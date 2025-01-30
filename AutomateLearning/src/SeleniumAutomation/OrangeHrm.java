@@ -1,5 +1,8 @@
 package SeleniumAutomation;
 
+import java.util.concurrent.TimeUnit;
+
+import org.junit.rules.Timeout;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,7 +17,7 @@ public class OrangeHrm {
 		driver= new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");	
-	    Thread.sleep(1000);
+	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.name("username")).sendKeys("Admin");
 		driver.findElement(By.name("password")).sendKeys("admin123");
 		driver.findElement(By.xpath("//button[normalize-space()='Login']")).click();
@@ -23,7 +26,7 @@ public class OrangeHrm {
 	public static void VerifyLogin() throws Exception {
 		String title = driver.getTitle();
 		System.out.println(title);
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		String ActualText=driver.findElement(By.xpath("//h6[normalize-space()=\"Dashboard\"]")).getText();
 		String ExpectedText ="Dashboard";
 		if (ExpectedText.contains(ActualText)) {
