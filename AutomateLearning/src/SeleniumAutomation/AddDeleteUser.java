@@ -60,10 +60,7 @@ public class AddDeleteUser extends OrangeHrm {
     	WebDriverWait wait=new WebDriverWait(driver, 10);
     	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='orangehrm-container']")));
     	
-    	//delete the newly added employee
     	
-    	  		
-
     }
     
     public static void PIM_Employeepage() {
