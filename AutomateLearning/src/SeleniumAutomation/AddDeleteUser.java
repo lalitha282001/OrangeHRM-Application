@@ -59,7 +59,7 @@ public class AddDeleteUser extends OrangeHrm {
     	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     	WebDriverWait wait=new WebDriverWait(driver, 10);
     	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='orangehrm-container']")));
-    	
+    	//delete user
     	
     }
     
